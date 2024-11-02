@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b0dtcwqooj8b5"
+path="res://.godot/imported/Stereo AMBIENT Maelstrom.mp3-dd9cc71348b2e6f4ee3c2853924e6abd.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Maelstrom.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Maelstrom.mp3-dd9cc71348b2e6f4ee3c2853924e6abd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

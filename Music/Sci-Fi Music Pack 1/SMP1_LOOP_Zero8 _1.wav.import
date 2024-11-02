@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d55h7fpiahjp"
+path="res://.godot/imported/SMP1_LOOP_Zero8 _1.wav-b82728d901e932d8687f93e7f603c980.sample"
+
+[deps]
+
+source_file="res://Music/Sci-Fi Music Pack 1/SMP1_LOOP_Zero8 _1.wav"
+dest_files=["res://.godot/imported/SMP1_LOOP_Zero8 _1.wav-b82728d901e932d8687f93e7f603c980.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

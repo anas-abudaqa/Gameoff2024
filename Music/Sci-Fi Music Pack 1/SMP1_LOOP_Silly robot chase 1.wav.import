@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b5imywrt085jx"
+path="res://.godot/imported/SMP1_LOOP_Silly robot chase 1.wav-d52faa3bb98fd5a3410f8f6c8dfd6999.sample"
+
+[deps]
+
+source_file="res://Music/Sci-Fi Music Pack 1/SMP1_LOOP_Silly robot chase 1.wav"
+dest_files=["res://.godot/imported/SMP1_LOOP_Silly robot chase 1.wav-d52faa3bb98fd5a3410f8f6c8dfd6999.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cxllta0n5th5m"
+path="res://.godot/imported/Stereo AMBIENT Soft Alarm.mp3-40f0664817886ee8f00a4a03d3bc67c7.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Soft Alarm.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Soft Alarm.mp3-40f0664817886ee8f00a4a03d3bc67c7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

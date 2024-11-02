@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djmaeo1xi75dq"
+path="res://.godot/imported/Stereo AMBIENT Analog Jumping Boy.mp3-4d12e77c063d8e0952c940c38c18f0d4.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Analog Jumping Boy.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Analog Jumping Boy.mp3-4d12e77c063d8e0952c940c38c18f0d4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

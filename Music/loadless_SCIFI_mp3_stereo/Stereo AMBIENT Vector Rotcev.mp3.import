@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://doh6ucbk8ih3o"
+path="res://.godot/imported/Stereo AMBIENT Vector Rotcev.mp3-52c16f53d98d4da5d46c16828754758c.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Vector Rotcev.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Vector Rotcev.mp3-52c16f53d98d4da5d46c16828754758c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

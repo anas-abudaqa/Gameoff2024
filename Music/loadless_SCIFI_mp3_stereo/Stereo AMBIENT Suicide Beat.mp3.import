@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://de812eg0lhb55"
+path="res://.godot/imported/Stereo AMBIENT Suicide Beat.mp3-b2359230346208b0c3718b89bd78e323.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Suicide Beat.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Suicide Beat.mp3-b2359230346208b0c3718b89bd78e323.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

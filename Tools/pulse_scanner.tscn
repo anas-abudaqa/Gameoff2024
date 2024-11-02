@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://drjc37yj36c78"]
+
+[ext_resource type="Script" path="res://Tools/pulse_scanner.gd" id="1_405vk"]
+[ext_resource type="Texture2D" uid="uid://cge47a3ulwha2" path="res://Art/2d_lights_and_shadows_neutral_point_light.webp" id="1_twhi2"]
+
+[node name="PulseScanner" type="Node2D"]
+script = ExtResource("1_405vk")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+enabled = false
+color = Color(0.792157, 0, 1, 1)
+energy = 2.0
+texture = ExtResource("1_twhi2")
+texture_scale = 4.0
+
+[node name="CoolDownTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="EffectTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="EffectTimer" to="." method="_on_effect_timer_timeout"]

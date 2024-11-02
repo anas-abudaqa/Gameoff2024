@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crw40vv3yrbye"
+path="res://.godot/imported/Stereo AMBIENT Vector Cray.mp3-3f0b518774c7d9c7e84bc41a6406eae9.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Vector Cray.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Vector Cray.mp3-3f0b518774c7d9c7e84bc41a6406eae9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

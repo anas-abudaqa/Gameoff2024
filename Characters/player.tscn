@@ -1,0 +1,40 @@
+[gd_scene load_steps=8 format=3 uid="uid://c21cebd16aewl"]
+
+[ext_resource type="Script" path="res://Characters/Player.gd" id="1_5e3qb"]
+[ext_resource type="Texture2D" uid="uid://cojl6veer4676" path="res://Art/Rectangle.png" id="2_qfkoj"]
+[ext_resource type="Texture2D" uid="uid://cge47a3ulwha2" path="res://Art/2d_lights_and_shadows_neutral_point_light.webp" id="3_s8ehm"]
+[ext_resource type="Texture2D" uid="uid://j7ft2vu06tsl" path="res://Art/Meter_Empty.png" id="4_virrd"]
+[ext_resource type="Texture2D" uid="uid://b3sexmttcc224" path="res://Art/Meter_Full.png" id="5_qstom"]
+[ext_resource type="PackedScene" uid="uid://cp2ld63ui0kib" path="res://Tools/StealthMatrix.tscn" id="6_3q8mo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p25ca"]
+size = Vector2(32, 48)
+
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+rotation = -3.14159
+collision_layer = 2
+script = ExtResource("1_5e3qb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_qfkoj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_p25ca")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+shadow_enabled = true
+shadow_filter = 1
+texture = ExtResource("3_s8ehm")
+texture_scale = 1.5
+height = 50.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_left = -3.99989
+offset_top = 42.0
+offset_right = 36.0001
+offset_bottom = 82.0
+fill_mode = 2
+texture_under = ExtResource("4_virrd")
+texture_progress = ExtResource("5_qstom")
+
+[node name="StealthMatrix" parent="." instance=ExtResource("6_3q8mo")]

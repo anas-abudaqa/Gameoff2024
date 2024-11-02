@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://djl1ahck01uv4"]
+
+[ext_resource type="Script" path="res://Characters/EnemyOrb.gd" id="1_w4q4o"]
+[ext_resource type="Texture2D" uid="uid://b1mhlpeii1vjj" path="res://Art/Enemy.png" id="2_034t4"]
+[ext_resource type="Texture2D" uid="uid://j7ft2vu06tsl" path="res://Art/Meter_Empty.png" id="3_htoor"]
+[ext_resource type="Texture2D" uid="uid://b3sexmttcc224" path="res://Art/Meter_Full.png" id="4_n0bdp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8l6bg"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7p5ln"]
+size = Vector2(289.25, 43.2505)
+
+[node name="EnemyOrb" type="Area2D"]
+position = Vector2(104, 338)
+rotation = -3.14159
+script = ExtResource("1_w4q4o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -3.8147e-06)
+texture = ExtResource("2_034t4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8l6bg")
+
+[node name="RayCastLeft" type="RayCast2D" parent="."]
+position = Vector2(16, 0.999959)
+target_position = Vector2(84, -0.000213623)
+
+[node name="RayCastRight" type="RayCast2D" parent="."]
+position = Vector2(-16, 1.00004)
+target_position = Vector2(-75, -0.999817)
+
+[node name="VisionCone" type="Node2D" parent="."]
+
+[node name="Area2D" type="Area2D" parent="VisionCone"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VisionCone/Area2D"]
+position = Vector2(-122.375, -0.624603)
+shape = SubResource("RectangleShape2D_7p5ln")
+
+[node name="LineOfSight" type="RayCast2D" parent="VisionCone"]
+position = Vector2(-16, 4.29153e-05)
+enabled = false
+target_position = Vector2(-250, 0)
+collision_mask = 3
+
+[node name="EscapedTimer" type="Timer" parent="VisionCone"]
+wait_time = 5.0
+one_shot = true
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="TrackerUpdateTimer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = -3.99994
+offset_top = 23.0
+offset_right = 4.00006
+offset_bottom = 31.0
+fill_mode = 2
+texture_under = ExtResource("3_htoor")
+texture_progress = ExtResource("4_n0bdp")
+
+[connection signal="body_entered" from="VisionCone/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="VisionCone/Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="VisionCone/EscapedTimer" to="." method="_on_escaped_timer_timeout"]
+[connection signal="timeout" from="TrackerUpdateTimer" to="." method="_on_timer_timeout"]

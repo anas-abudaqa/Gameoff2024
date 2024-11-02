@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kusqvlu3w5su"
+path="res://.godot/imported/Stereo AMBIENT Planetarium.mp3-5e6e55bea8395ee544f167e012e9e22f.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Planetarium.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Planetarium.mp3-5e6e55bea8395ee544f167e012e9e22f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

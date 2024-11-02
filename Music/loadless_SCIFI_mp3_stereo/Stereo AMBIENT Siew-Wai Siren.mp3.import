@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8aj8cistnulk"
+path="res://.godot/imported/Stereo AMBIENT Siew-Wai Siren.mp3-94e198f8145dd05139b6355c44452bc2.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Siew-Wai Siren.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Siew-Wai Siren.mp3-94e198f8145dd05139b6355c44452bc2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

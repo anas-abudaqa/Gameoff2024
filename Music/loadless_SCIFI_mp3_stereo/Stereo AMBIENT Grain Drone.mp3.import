@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bhnelqfk6pyb2"
+path="res://.godot/imported/Stereo AMBIENT Grain Drone.mp3-dee6cb07f4412c02b220da0c583c969e.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Grain Drone.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Grain Drone.mp3-dee6cb07f4412c02b220da0c583c969e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

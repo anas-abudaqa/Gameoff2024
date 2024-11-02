@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bm2vfvem3nt4t"
+path="res://.godot/imported/Stereo AMBIENT Alien Ship.mp3-633d337e7e7348e9dad9e62609140f8f.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Alien Ship.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Alien Ship.mp3-633d337e7e7348e9dad9e62609140f8f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

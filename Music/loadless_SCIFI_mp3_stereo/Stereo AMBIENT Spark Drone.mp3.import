@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://0l6sd6fpvkcn"
+path="res://.godot/imported/Stereo AMBIENT Spark Drone.mp3-58d76be51af09caaa86a1e234da6baea.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Spark Drone.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Spark Drone.mp3-58d76be51af09caaa86a1e234da6baea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

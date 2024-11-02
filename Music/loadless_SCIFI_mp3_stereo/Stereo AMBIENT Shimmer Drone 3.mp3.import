@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bajbvvjojis1e"
+path="res://.godot/imported/Stereo AMBIENT Shimmer Drone 3.mp3-a319e3001ba7fe49d42f5c19113010ca.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Shimmer Drone 3.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Shimmer Drone 3.mp3-a319e3001ba7fe49d42f5c19113010ca.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

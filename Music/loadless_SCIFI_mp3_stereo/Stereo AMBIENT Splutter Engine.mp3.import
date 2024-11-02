@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwce8v1uht0fy"
+path="res://.godot/imported/Stereo AMBIENT Splutter Engine.mp3-08b239fb4ad99e2053fc289bcc88e732.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Splutter Engine.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Splutter Engine.mp3-08b239fb4ad99e2053fc289bcc88e732.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bve1k2m35uml8"
+path="res://.godot/imported/Stereo AMBIENT Rotor Triad.mp3-522a22a54f83010d9fcf95fb265a6718.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Rotor Triad.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Rotor Triad.mp3-522a22a54f83010d9fcf95fb265a6718.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

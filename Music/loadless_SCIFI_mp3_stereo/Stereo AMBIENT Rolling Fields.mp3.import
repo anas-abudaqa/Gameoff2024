@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bi8v7s43ffyyj"
+path="res://.godot/imported/Stereo AMBIENT Rolling Fields.mp3-33aef5b0cbb4784be96ede590b6dea6e.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Rolling Fields.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Rolling Fields.mp3-33aef5b0cbb4784be96ede590b6dea6e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

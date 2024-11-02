@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3hmoupecjlci"
+path="res://.godot/imported/Stereo AMBIENT Desert Road.mp3-8f0059d1a85074c9c171df6765272452.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Desert Road.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Desert Road.mp3-8f0059d1a85074c9c171df6765272452.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

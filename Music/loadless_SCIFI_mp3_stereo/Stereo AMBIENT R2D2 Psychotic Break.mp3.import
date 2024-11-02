@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://swh3epvmplfd"
+path="res://.godot/imported/Stereo AMBIENT R2D2 Psychotic Break.mp3-9d235b8518f833f71846ad79934ff6a6.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT R2D2 Psychotic Break.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT R2D2 Psychotic Break.mp3-9d235b8518f833f71846ad79934ff6a6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

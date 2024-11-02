@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwce2m6paslk0"
+path="res://.godot/imported/Stereo AMBIENT Digital Crush.mp3-0cc4580b958d2e34e10b9df5b008e2dd.mp3str"
+
+[deps]
+
+source_file="res://Music/loadless_SCIFI_mp3_stereo/Stereo AMBIENT Digital Crush.mp3"
+dest_files=["res://.godot/imported/Stereo AMBIENT Digital Crush.mp3-0cc4580b958d2e34e10b9df5b008e2dd.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
