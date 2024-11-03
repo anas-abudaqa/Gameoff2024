@@ -1,12 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://d314sxpn03c76"]
+[gd_scene load_steps=9 format=3 uid="uid://d314sxpn03c76"]
 
 [ext_resource type="PackedScene" uid="uid://c21cebd16aewl" path="res://Characters/player.tscn" id="1_iqald"]
-[ext_resource type="Texture2D" uid="uid://cxaj1llhx4rw8" path="res://Art/Sci-fi UI Kit/CrossIcon.png" id="1_pmyfy"]
 [ext_resource type="PackedScene" uid="uid://djl1ahck01uv4" path="res://Characters/enemy_orb.tscn" id="3_fvc50"]
 [ext_resource type="PackedScene" uid="uid://cl8rortd1gwil" path="res://Levels/level_room.tscn" id="4_je1hs"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_s3sbc"]
-radius = 28.0179
 
 [sub_resource type="Curve2D" id="Curve2D_a5caj"]
 _data = {
@@ -39,21 +35,6 @@ outlines = Array[PackedVector2Array]([PackedVector2Array(-11, -19, 1173, -19, 11
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [node name="TestLevel" type="Node2D"]
-
-[node name="Area2D" type="Area2D" parent="."]
-position = Vector2(783, 136)
-rotation = -3.14159
-collision_layer = 8
-collision_mask = 0
-
-[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
-visible = false
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_pmyfy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-1.2517e-06, -1.2517e-06)
-shape = SubResource("CircleShape2D_s3sbc")
 
 [node name="Player" parent="." instance=ExtResource("1_iqald")]
 position = Vector2(868, 129)

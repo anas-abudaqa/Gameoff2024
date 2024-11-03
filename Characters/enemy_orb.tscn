@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://djl1ahck01uv4"]
+[gd_scene load_steps=9 format=3 uid="uid://djl1ahck01uv4"]
 
 [ext_resource type="Script" path="res://Characters/EnemyOrb.gd" id="1_w4q4o"]
 [ext_resource type="Texture2D" uid="uid://b1mhlpeii1vjj" path="res://Art/Enemy.png" id="2_034t4"]
+[ext_resource type="Texture2D" uid="uid://cge47a3ulwha2" path="res://Art/2d_lights_and_shadows_neutral_point_light.webp" id="3_0ff8f"]
 [ext_resource type="Texture2D" uid="uid://j7ft2vu06tsl" path="res://Art/Meter_Empty.png" id="3_htoor"]
 [ext_resource type="Texture2D" uid="uid://b3sexmttcc224" path="res://Art/Meter_Full.png" id="4_n0bdp"]
 
@@ -11,6 +12,9 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p5ln"]
 size = Vector2(289.25, 43.2505)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hepkf"]
+size = Vector2(41.0001, 40.9999)
+
 [node name="EnemyOrb" type="Area2D" groups=["Enemies"]]
 position = Vector2(104, 338)
 rotation = -3.14159
@@ -19,19 +23,12 @@ collision_mask = 3
 script = ExtResource("1_w4q4o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.831373, 0.607843, 0.0705882, 1)
 position = Vector2(0, -3.8147e-06)
 texture = ExtResource("2_034t4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_8l6bg")
-
-[node name="RayCastLeft" type="RayCast2D" parent="."]
-position = Vector2(16, 0.999959)
-target_position = Vector2(84, -0.000213623)
-
-[node name="RayCastRight" type="RayCast2D" parent="."]
-position = Vector2(-16, 1.00004)
-target_position = Vector2(-75, -0.999817)
 
 [node name="VisionCone" type="Node2D" parent="."]
 
@@ -52,9 +49,6 @@ collision_mask = 3
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 debug_enabled = true
 
-[node name="TrackerUpdateTimer" type="Timer" parent="."]
-wait_time = 0.2
-
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]
 visible = false
 offset_left = -3.99994
@@ -65,6 +59,24 @@ fill_mode = 2
 texture_under = ExtResource("3_htoor")
 texture_progress = ExtResource("4_n0bdp")
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.894118, 0.654902, 0, 1)
+texture = ExtResource("3_0ff8f")
+texture_scale = 0.2
+
+[node name="HighlightTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="MouseInteractionArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseInteractionArea"]
+position = Vector2(-1.2517e-06, 1.2815e-06)
+shape = SubResource("RectangleShape2D_hepkf")
+
 [connection signal="body_entered" from="VisionCone/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="VisionCone/Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="timeout" from="TrackerUpdateTimer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="HighlightTimer" to="." method="_on_highlight_timer_timeout"]
+[connection signal="input_event" from="MouseInteractionArea" to="." method="_on_mouse_interaction_area_input_event"]
+[connection signal="mouse_entered" from="MouseInteractionArea" to="." method="_on_mouse_interaction_area_mouse_entered"]
+[connection signal="mouse_exited" from="MouseInteractionArea" to="." method="_on_mouse_interaction_area_mouse_exited"]

@@ -10,3 +10,8 @@ script = ExtResource("1_lsoix")
 [node name="PulseScanner" parent="." instance=ExtResource("2_ou83b")]
 
 [node name="HackingTool" parent="." instance=ExtResource("3_u3dog")]
+
+[node name="CycleTestTimer" type="Timer" parent="."]
+wait_time = 5.0
+
+[connection signal="timeout" from="CycleTestTimer" to="." method="_on_cycle_test_timer_timeout"]

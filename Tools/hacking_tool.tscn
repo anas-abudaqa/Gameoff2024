@@ -8,12 +8,17 @@ size = Vector2(302, 170.5)
 [node name="HackingTool" type="Node2D"]
 script = ExtResource("1_t7j4q")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="DetectionArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 8
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
 position = Vector2(152, 86)
 shape = SubResource("RectangleShape2D_ltw1r")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[node name="EffectTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="area_entered" from="DetectionArea" to="." method="_on_area_2d_area_entered"]
+[connection signal="timeout" from="EffectTimer" to="." method="_on_effect_timer_timeout"]

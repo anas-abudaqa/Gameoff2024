@@ -5,6 +5,7 @@ var available_charges: int
 var equipped_tool
 @onready var pulse_scanner = $PulseScanner
 @onready var hacking_tool = $HackingTool
+@onready var cycle_test_timer = $CycleTestTimer
 
 #key is an int, value is tool scene
 #need to make this onready because our tool nodes will only be available on ready
@@ -16,11 +17,11 @@ var equipped_tool
 
 func _ready():
 	change_equipped_tool(2)
-	print(equipped_tool)
+	
 
 func change_equipped_tool(desired_tool: int):
 	equipped_tool = available_tools[desired_tool]
-
+	print("Now equipping tool: ", equipped_tool)
 
 
 func recharge_matrix(recharge_amount: int):
@@ -30,3 +31,8 @@ func recharge_matrix(recharge_amount: int):
 
 func activate_equipped_tool():
 	equipped_tool.activate()
+
+
+func _on_cycle_test_timer_timeout():
+	var i = randi_range(1, 2)
+	change_equipped_tool(i)

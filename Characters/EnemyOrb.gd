@@ -3,28 +3,28 @@ extends Area2D
 
 @export var player: CharacterBody2D
 @export var patrol_path: PathFollow2D
+@onready var highlight_timer = $HighlightTimer
 
-@onready var ray_cast_left = $RayCastLeft
-@onready var ray_cast_right = $RayCastRight
+@onready var point_light_2d = $PointLight2D
 @onready var sprite_2d = $Sprite2D
 @onready var navigation_agent_2d = $NavigationAgent2D
-#@onready var tracker_update_timer = $TrackerUpdateTimer
 @onready var line_of_sight = $VisionCone/LineOfSight
-#@onready var escape_timer = $VisionCone/EscapedTimer
 @onready var texture_progress_bar = $TextureProgressBar
+@onready var mouse_interaction_area = $MouseInteractionArea
 
-var going_right: bool = true
+
 var speed: float = randf_range(175, 250)
 var alert_mode = false
 var direction_vector: Vector2 = Vector2.ZERO
 
-
-#var player_in_sight: bool = false
-
+var allow_clicks: bool = true
+var mouse_in_area: bool = false
 var detection_meter: float = 0
 var detection_meter_max: float = 100
 var start_meter: bool = false
 var awareness_status
+
+
 enum awareness_levels {
 	Idle,
 	Curious,
@@ -33,15 +33,19 @@ enum awareness_levels {
 	Nervous
 }
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#set max value for our detection meter sprite
 	texture_progress_bar.max_value = detection_meter_max
+	#set starting point on patrol path starting point if it exists
 	if patrol_path:
 		global_position = patrol_path.global_position
+		
+		
+	#by default set these parameters to false 
+	point_light_2d.enabled = false
 
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
 	
@@ -72,7 +76,8 @@ func _physics_process(delta):
 		if detection_meter > 0:
 			fill_up_detection_meter(-0.2)
 	
-
+	
+	
 func player_in_line_of_sight() -> bool:
 	var collided_object = line_of_sight.get_collider()
 	if collided_object:
@@ -92,9 +97,16 @@ func patrol(delta):
 	if patrol_path:
 		patrol_path.progress += speed * delta
 
-func highlight_sprite():
+func highlight():
 	##to be used by the pulse_scanner to highlight enemies
-	pass
+	point_light_2d.enabled = true
+	print("my light is on ", point_light_2d.enabled)
+	highlight_timer.start()
+
+func make_clickable():
+	allow_clicks = true
+	print("Now you can click ", allow_clicks)
+
 
 func _on_area_2d_body_entered(body):
 	#When we detect the player is in the vision cone. Try to establish line of sight
@@ -105,6 +117,27 @@ func _on_area_2d_body_exited(body):
 	#check if we are alerted first before disabling line of sight
 	if !alert_mode:
 		line_of_sight.enabled = false
+
+func _on_highlight_timer_timeout():
+	point_light_2d.enabled = false
+
+func _on_mouse_interaction_area_input_event(viewport, event, shape_idx):
+	if allow_clicks and mouse_in_area:
+		if event.is_action_pressed("LMB"):
+			print("Yo this kinda works")
+			allow_clicks = false
+	#else:
+		#print("mouse is here ", mouse_in_area)
+		#print("i can click ", allow_clicks)
+
+
+
+func _on_mouse_interaction_area_mouse_entered():
+	mouse_in_area = true
+
+
+func _on_mouse_interaction_area_mouse_exited():
+	mouse_in_area = false
 
 	#if going_right:
 		#position.x += speed * delta
@@ -142,13 +175,9 @@ func _on_area_2d_body_exited(body):
 #func update_target_position():
 	#navigation_agent_2d.target_position = player.global_position
 
-#func _on_timer_timeout():
-	#update_target_position()
 
 
-#func _on_escaped_timer_timeout():
-	#print("chase ended")
-	#alert_mode = false
-	#tracker_update_timer.stop()
-	#line_of_sight.enabled = false
-	#line_of_sight.target_position = Vector2(-250, 0)
+
+
+
+
