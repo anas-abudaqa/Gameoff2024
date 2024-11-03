@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://drjc37yj36c78"]
+[gd_scene load_steps=5 format=3 uid="uid://drjc37yj36c78"]
 
 [ext_resource type="Script" path="res://Tools/pulse_scanner.gd" id="1_405vk"]
 [ext_resource type="Texture2D" uid="uid://cge47a3ulwha2" path="res://Art/2d_lights_and_shadows_neutral_point_light.webp" id="1_twhi2"]
+[ext_resource type="Texture2D" uid="uid://c5o57awv42ssq" path="res://Art/Sci-fi UI Kit/CrossIconRed.png" id="3_gu4lt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c5a6p"]
+radius = 400.0
 
 [node name="PulseScanner" type="Node2D"]
 script = ExtResource("1_405vk")
@@ -18,7 +22,20 @@ wait_time = 3.0
 one_shot = true
 
 [node name="EffectTimer" type="Timer" parent="."]
-wait_time = 0.4
+wait_time = 0.2
 one_shot = true
 
+[node name="EnemyDetectionArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnemyDetectionArea"]
+shape = SubResource("CircleShape2D_c5a6p")
+
+[node name="Sprite2D" type="Sprite2D" parent="EnemyDetectionArea"]
+visible = false
+scale = Vector2(4, 4)
+texture = ExtResource("3_gu4lt")
+
 [connection signal="timeout" from="EffectTimer" to="." method="_on_effect_timer_timeout"]
+[connection signal="area_entered" from="EnemyDetectionArea" to="." method="_on_area_2d_area_entered"]

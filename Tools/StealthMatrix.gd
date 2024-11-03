@@ -4,16 +4,18 @@ var max_charges: int
 var available_charges: int
 var equipped_tool
 @onready var pulse_scanner = $PulseScanner
+@onready var hacking_tool = $HackingTool
 
 #key is an int, value is tool scene
-#need to make this onready because our nodes will only be available when ready
+#need to make this onready because our tool nodes will only be available on ready
 @onready var available_tools = {
-	1: pulse_scanner
+	1: pulse_scanner,
+	2: hacking_tool
 }
 
 
 func _ready():
-	change_equipped_tool(1)
+	change_equipped_tool(2)
 	print(equipped_tool)
 
 func change_equipped_tool(desired_tool: int):

@@ -8,9 +8,9 @@ extends Area2D
 @onready var ray_cast_right = $RayCastRight
 @onready var sprite_2d = $Sprite2D
 @onready var navigation_agent_2d = $NavigationAgent2D
-@onready var tracker_update_timer = $TrackerUpdateTimer
+#@onready var tracker_update_timer = $TrackerUpdateTimer
 @onready var line_of_sight = $VisionCone/LineOfSight
-@onready var escape_timer = $VisionCone/EscapedTimer
+#@onready var escape_timer = $VisionCone/EscapedTimer
 @onready var texture_progress_bar = $TextureProgressBar
 
 var going_right: bool = true
@@ -91,6 +91,10 @@ func fill_up_detection_meter(rate):
 func patrol(delta):
 	if patrol_path:
 		patrol_path.progress += speed * delta
+
+func highlight_sprite():
+	##to be used by the pulse_scanner to highlight enemies
+	pass
 
 func _on_area_2d_body_entered(body):
 	#When we detect the player is in the vision cone. Try to establish line of sight

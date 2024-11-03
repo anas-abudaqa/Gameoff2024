@@ -1,9 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://cp2ld63ui0kib"]
+[gd_scene load_steps=4 format=3 uid="uid://cp2ld63ui0kib"]
 
 [ext_resource type="Script" path="res://Tools/StealthMatrix.gd" id="1_lsoix"]
 [ext_resource type="PackedScene" uid="uid://drjc37yj36c78" path="res://Tools/pulse_scanner.tscn" id="2_ou83b"]
+[ext_resource type="PackedScene" uid="uid://hivnfgh21psi" path="res://Tools/hacking_tool.tscn" id="3_u3dog"]
 
 [node name="StealthMatrix" type="Node2D"]
 script = ExtResource("1_lsoix")
 
 [node name="PulseScanner" parent="." instance=ExtResource("2_ou83b")]
+
+[node name="HackingTool" parent="." instance=ExtResource("3_u3dog")]

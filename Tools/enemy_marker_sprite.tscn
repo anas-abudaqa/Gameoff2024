@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://u8dl8ofowl2p"]
+
+[ext_resource type="Texture2D" uid="uid://c5o57awv42ssq" path="res://Art/Sci-fi UI Kit/CrossIconRed.png" id="1_flh8q"]
+[ext_resource type="Script" path="res://Tools/enemy_marker_sprite.gd" id="1_slwe8"]
+[ext_resource type="Texture2D" uid="uid://cge47a3ulwha2" path="res://Art/2d_lights_and_shadows_neutral_point_light.webp" id="2_bt2hr"]
+
+[node name="EnemyMarker" type="Node2D"]
+script = ExtResource("1_slwe8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 0)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_flh8q")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+texture = ExtResource("2_bt2hr")
+texture_scale = 0.4
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

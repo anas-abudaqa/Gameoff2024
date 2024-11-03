@@ -11,9 +11,11 @@ size = Vector2(32, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7p5ln"]
 size = Vector2(289.25, 43.2505)
 
-[node name="EnemyOrb" type="Area2D"]
+[node name="EnemyOrb" type="Area2D" groups=["Enemies"]]
 position = Vector2(104, 338)
 rotation = -3.14159
+collision_layer = 12
+collision_mask = 3
 script = ExtResource("1_w4q4o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -47,10 +49,6 @@ enabled = false
 target_position = Vector2(-250, 0)
 collision_mask = 3
 
-[node name="EscapedTimer" type="Timer" parent="VisionCone"]
-wait_time = 5.0
-one_shot = true
-
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 debug_enabled = true
 
@@ -69,5 +67,4 @@ texture_progress = ExtResource("4_n0bdp")
 
 [connection signal="body_entered" from="VisionCone/Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="VisionCone/Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="timeout" from="VisionCone/EscapedTimer" to="." method="_on_escaped_timer_timeout"]
 [connection signal="timeout" from="TrackerUpdateTimer" to="." method="_on_timer_timeout"]
